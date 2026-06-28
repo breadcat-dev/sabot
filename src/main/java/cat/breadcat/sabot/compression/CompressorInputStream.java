@@ -1,10 +1,9 @@
 package cat.breadcat.sabot.compression;
 
-import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 
-public abstract class CompressorInputStream extends InputStream implements Closeable
+public abstract class CompressorInputStream extends InputStream implements AutoCloseable
 {
     protected final InputStream in;
 
