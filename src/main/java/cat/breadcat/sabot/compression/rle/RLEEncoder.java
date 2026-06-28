@@ -12,8 +12,7 @@ public final class RLEEncoder implements Encoder
 
     public RLEEncoder()
     {
-        this.value = -1;
-        this.count = 0;
+        reset();
     }
 
 
