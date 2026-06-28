@@ -1,0 +1,24 @@
+package cat.breadcat.sabot.compression;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public abstract class CompressorInputStream extends InputStream
+{
+    protected final InputStream in;
+
+    protected boolean closed;
+
+    protected CompressorInputStream(InputStream in)
+    {
+        this.in = in;
+    }
+
+    public void close() throws IOException
+    {
+        if(closed)
+            throw new IllegalStateException("Stream is already closed");
+
+        in.close();
+    }
+}
