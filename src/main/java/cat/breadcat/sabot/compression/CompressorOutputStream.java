@@ -4,7 +4,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public abstract class CompressorOutputStream extends OutputStream implements AutoCloseable
+public abstract class CompressorOutputStream extends OutputStream implements Closeable
 {
     protected final OutputStream out;
 
