@@ -1,9 +1,10 @@
 package cat.breadcat.sabot.compression;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public abstract class CompressorOutputStream extends OutputStream
+public abstract class CompressorOutputStream extends OutputStream implements Closeable
 {
     protected final OutputStream out;
 
@@ -19,6 +20,7 @@ public abstract class CompressorOutputStream extends OutputStream
 
     public abstract void write(int inputByte) throws IOException;
 
+    @Override
     public void close() throws IOException
     {
         if(closed)
